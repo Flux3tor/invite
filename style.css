@@ -1,0 +1,86 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  height:100vh;
+  background: radial-gradient(circle at top, #1a1a1f, #0b0b0f 70%);
+  color:white;
+  font-family:Inter, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
+}
+
+.container{
+  animation: fadeIn 1.5s ease forwards;
+  opacity:0;
+  width:90%;
+  max-width:800px;
+}
+
+@keyframes fadeIn{
+  to{opacity:1;}
+}
+
+h1{
+  font-family:"Playfair Display", serif;
+  font-size:64px;
+  color:#f5e6a6;
+  text-shadow:0 0 20px rgba(212,175,55,0.5);
+  margin-bottom:15px;
+}
+
+.subtitle{
+  font-size:18px;
+  opacity:0.85;
+  margin-bottom:40px;
+  line-height:1.6;
+}
+
+.countdown{
+  font-size:28px;
+  letter-spacing:3px;
+  margin-bottom:50px;
+  color:#d4af37;
+}
+
+button{
+  padding:18px 50px;
+  font-size:18px;
+  border:none;
+  border-radius:40px;
+  background:#d4af37;
+  color:#0b0b0f;
+  cursor:pointer;
+  transition:0.4s;
+  box-shadow:0 0 25px rgba(212,175,55,0.4);
+}
+
+button:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 45px rgba(212,175,55,0.8);
+}
+
+input{
+  padding:18px;
+  width:80%;
+  border-radius:40px;
+  border:none;
+  margin-bottom:25px;
+  font-size:18px;
+  text-align:center;
+}
+
+.small{
+  position:absolute;
+  bottom:20px;
+  width:100%;
+  font-size:12px;
+  opacity:0.4;
+}
+
