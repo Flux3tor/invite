@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Private Invitation</title>
+<title>Private Invite</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+<div id="loader"><div class="loader-text">Establishing Secure Connection...</div></div>
+
 <div class="container">
   <h1>You’ve Been Selected</h1>
-
-  <div style="margin-bottom:20px; letter-spacing:4px; opacity:0.7;">
-    THE D PARTY • PRIVATE INVITE
-  </div>
+  <div style="letter-spacing:4px;opacity:.7;">THE D PARTY • PRIVATE INVITE</div>
 
   <div class="subtitle">
-    This invitation was not sent by accident.<br><br>
     A global guest list has been assembled.<br>
     You know which party this is.<br><br>
     Tonight. Midnight.
   </div>
 
+  <div id="guests"></div>
   <div class="countdown" id="countdown"></div>
 
-  <button onclick="location.href='/apply.html'">ENTER</button>
+  <button onclick="location.href='apply.html'">ENTER</button>
+  <button onclick="toggleMusic()">🎵 Music</button>
+
+  <audio id="music" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b6b2c7b2.mp3">
+  </audio>
+
 </div>
 
-<div class="small">This experience is strictly confidential.</div>
+<div class="small">Strictly confidential.</div>
 <script src="script.js"></script>
 </body>
 </html>
