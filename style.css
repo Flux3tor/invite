@@ -4,83 +4,118 @@
   box-sizing:border-box;
 }
 
-body{
-  height:100vh;
-  background: radial-gradient(circle at top, #1a1a1f, #0b0b0f 70%);
-  color:white;
+html,body{
+  height:100%;
   font-family:Inter, sans-serif;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+  background:#0b0b0f;
+  color:white;
   overflow:hidden;
 }
 
+canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
 .container{
-  animation: fadeIn 1.5s ease forwards;
-  opacity:0;
-  width:90%;
-  max-width:800px;
+  height:100%;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  animation:fadeIn 1.5s ease forwards;
 }
 
 @keyframes fadeIn{
-  to{opacity:1;}
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
 h1{
   font-family:"Playfair Display", serif;
-  font-size:64px;
+  font-weight:600;
   color:#f5e6a6;
-  text-shadow:0 0 20px rgba(212,175,55,0.5);
+  text-shadow:0 0 25px rgba(212,175,55,0.6);
   margin-bottom:15px;
 }
 
+/* responsive heading sizes */
+h1{ font-size:64px; }
+@media(max-width:900px){ h1{ font-size:48px; } }
+@media(max-width:600px){ h1{ font-size:34px; } }
+
 .subtitle{
-  font-size:18px;
-  opacity:0.85;
-  margin-bottom:40px;
+  opacity:.85;
   line-height:1.6;
+  margin-bottom:30px;
+  max-width:600px;
 }
 
 .countdown{
   font-size:28px;
   letter-spacing:3px;
-  margin-bottom:50px;
+  margin-bottom:30px;
   color:#d4af37;
 }
 
 button{
-  padding:18px 50px;
+  padding:16px 40px;
   font-size:18px;
   border:none;
   border-radius:40px;
   background:#d4af37;
   color:#0b0b0f;
   cursor:pointer;
-  transition:0.4s;
+  transition:.3s;
   box-shadow:0 0 25px rgba(212,175,55,0.4);
+  margin:10px;
 }
 
 button:hover{
   transform:scale(1.08);
-  box-shadow:0 0 45px rgba(212,175,55,0.8);
+  box-shadow:0 0 45px rgba(212,175,55,0.9);
 }
 
 input{
   padding:18px;
-  width:80%;
+  width:90%;
+  max-width:350px;
   border-radius:40px;
   border:none;
-  margin-bottom:25px;
+  margin-bottom:20px;
   font-size:18px;
   text-align:center;
 }
 
 .small{
   position:absolute;
-  bottom:20px;
-  width:100%;
+  bottom:15px;
   font-size:12px;
-  opacity:0.4;
+  opacity:.4;
 }
 
+/* loader */
+#loader{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:#0b0b0f;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.loader-text{
+  color:#d4af37;
+  font-size:22px;
+  letter-spacing:3px;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{50%{opacity:.3;}}
