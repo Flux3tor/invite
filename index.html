@@ -1,129 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Private Invitation</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  height:100vh;
-  background: radial-gradient(circle at top, #1a1a1f, #0b0b0f 70%);
-  color:white;
-  font-family:Inter, sans-serif;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  overflow:hidden;
-}
-
-.container{
-  animation: fadeIn 2s ease forwards;
-  opacity:0;
-}
-
-@keyframes fadeIn{
-  to{opacity:1;}
-}
-
-h1{
-  font-family:"Playfair Display", serif;
-  font-size:64px;
-  color:#f5e6a6;
-  text-shadow:0 0 20px rgba(212,175,55,0.5);
-  margin-bottom:20px;
-}
-
-.subtitle{
-  font-size:18px;
-  opacity:0.8;
-  margin-bottom:40px;
-}
-
-.countdown{
-  font-size:28px;
-  letter-spacing:3px;
-  margin-bottom:50px;
-  color:#d4af37;
-}
-
-button{
-  padding:18px 50px;
-  font-size:18px;
-  border:none;
-  border-radius:40px;
-  background:#d4af37;
-  color:#0b0b0f;
-  cursor:pointer;
-  transition:0.4s;
-  box-shadow:0 0 25px rgba(212,175,55,0.4);
-}
-
-button:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 45px rgba(212,175,55,0.8);
-}
-
-.small{
-  position:absolute;
-  bottom:20px;
-  width:100%;
-  font-size:12px;
-  opacity:0.4;
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
 <div class="container">
   <h1>You’ve Been Selected</h1>
+
+  <div style="margin-bottom:20px; letter-spacing:4px; opacity:0.7;">
+    THE D PARTY • PRIVATE INVITE
+  </div>
+
   <div class="subtitle">
-    This event is strictly invitation only.<br>
-    Do not share this link.
+    This invitation was not sent by accident.<br><br>
+    A global guest list has been assembled.<br>
+    You know which party this is.<br><br>
+    Tonight. Midnight.
   </div>
 
   <div class="countdown" id="countdown"></div>
 
-  <button onclick="enter()">ENTER</button>
+  <button onclick="location.href='/apply.html'">ENTER</button>
 </div>
 
-<div class="small">
-  By entering you agree to the terms of mystery.
-</div>
-
-<script>
-function updateCountdown(){
-  const now = new Date();
-  const midnight = new Date();
-  midnight.setHours(24,0,0,0);
-  const diff = midnight - now;
-
-  const h = Math.floor(diff / 1000 / 60 / 60);
-  const m = Math.floor(diff / 1000 / 60 % 60);
-  const s = Math.floor(diff / 1000 % 60);
-
-  document.getElementById("countdown").innerText =
-    `${h}H ${m}M ${s}S`;
-}
-
-setInterval(updateCountdown,1000);
-updateCountdown();
-
-function enter(){
-  window.location.href="/apply.html";
-}
-</script>
-
+<div class="small">This experience is strictly confidential.</div>
+<script src="script.js"></script>
 </body>
 </html>
